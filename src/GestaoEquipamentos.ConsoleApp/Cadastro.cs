@@ -12,16 +12,15 @@ namespace GestaoEquipamentos.ConsoleApp
         public Equipamento[] equipamento = new Equipamento[1000];
         public int id = 0;
 
-        public void ExcluirEquipamento()
+        public int ExcluirEquipamento()
         {
             Console.Clear();
             VizualizarEquipamento();
-            Console.WriteLine("Digite o Id do equipamento que deseja editar");
+            Console.WriteLine("Digite o Id do equipamento que deseja excluir");
             int excluirId = Convert.ToInt32(Console.ReadLine());
-            for (int j = 0; j < excluirId - 1; j++)
-            {
+           
 
-                for (int i = 0; i < id - 1; i++)
+                for (int i = excluirId; i < id-1; i++)
                 {
 
                     equipamento[i].nome = equipamento[i+1].nome;
@@ -36,7 +35,7 @@ namespace GestaoEquipamentos.ConsoleApp
 
                 }
                 id--;
-            }
+            return id;
         }
 
         public void EditarEquipamento()
